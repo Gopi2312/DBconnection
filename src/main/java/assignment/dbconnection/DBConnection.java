@@ -18,7 +18,6 @@ public class DBConnection {
 	void connection()
 	{
 		try {
-			//Class.forName("com.mysql.jdbc.Driver");
 			con = (Connection) DriverManager.getConnection(database,username,password);
 			System.out.println("Connection Established");
 		} 
