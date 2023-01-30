@@ -1,15 +1,17 @@
 package assignment.dbconnection;
 import java.util.*;
+import java.util.logging.*;
 public class Main
 {
     public static void main( String[] args )
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter DataBase URL: ");
+        Logger log = Logger.getLogger("hi");
+        log.info("Enter DataBase URL: ");
         String database = sc.nextLine();
-        System.out.println("Enter UserName: ");
+        log.info("Enter UserName: ");
         String username = sc.nextLine();
-        System.out.println("Enter Password: ");
+        log.info("Enter Password: ");
         String password = sc.nextLine();
         DBConnection db = DBConnection.getInstance(database,username,password);
 
@@ -17,8 +19,8 @@ public class Main
         
         while(b)
         {
-        	System.out.println("1.connection 2.close 3.exit");
-            System.out.println("Enter Choice");
+        	log.info("1.connection 2.close 3.exit");
+            log.info("Enter Choice");
             int n = sc.nextInt();
         	switch(n)
         	{
@@ -40,7 +42,7 @@ public class Main
         		}
         		default:
         		{
-        			System.out.println("Invalid");
+        			log.info("Invalid");
         			break;
         		}
         		
