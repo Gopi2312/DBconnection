@@ -1,11 +1,13 @@
 package assignment.dbconnection;
 import java.sql.DriverManager;
 import java.sql.Connection;
+import java.util.logging.*;
 public class DBConnection {
 	String database;
 	String username;
 	String password;
 	Connection con = null;
+	Logger log = Logger.getLogger("hi");
 	private DBConnection(String database,String username, String password) {
 		this.database = database;
 		this.username = username;
@@ -22,7 +24,7 @@ public class DBConnection {
 			System.out.println("Connection Established");
 		} 
 		catch (Exception e) {
-			System.out.println(e);
+			log.info(e);
 		}	
 	}
 	
@@ -30,10 +32,10 @@ public class DBConnection {
 	{
 		try {
 			con.close();
-			System.out.println("Closed");
+			log.info("Closed");
 		} 
 		catch (Exception e) {
-			System.out.println(e);
+			log.info(e);
 		}
 	}
 }
