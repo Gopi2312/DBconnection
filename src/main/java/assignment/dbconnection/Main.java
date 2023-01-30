@@ -15,7 +15,7 @@ public class Main
 
         boolean b = true;
         
-        while(b==true)
+        while(b)
         {
         	System.out.println("1.connection 2.close 3.exit");
             System.out.println("Enter Choice");
