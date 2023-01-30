@@ -18,7 +18,7 @@ public class DBConnection {
 	void connection()
 	{
 		try {
-			con = (Connection) DriverManager.getConnection(database,username,password);
+			con = DriverManager.getConnection(database,username,password);
 			System.out.println("Connection Established");
 		} 
 		catch (Exception e) {
