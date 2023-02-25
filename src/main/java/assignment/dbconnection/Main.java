@@ -15,7 +15,7 @@ public class Main
         String password = sc.nextLine();
         DBConnection db = DBConnection.getInstance(database,username,password);
 
-        boolean b = true;
+        boolean b;
         
         while(b)
         {
@@ -37,7 +37,6 @@ public class Main
         		case 3:
         		{
         			System.exit(0);
-        			b=false;
         			break;
         		}
         		default:
