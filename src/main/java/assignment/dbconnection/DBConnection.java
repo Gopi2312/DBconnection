@@ -6,6 +6,7 @@ public class DBConnection {
 	String database;
 	String username;
 	String password;
+	static DBConnection singleInstance = null;
 	Connection con = null;
 	Logger log = Logger.getLogger("hi");
 	private DBConnection(String database,String username, String password) {
@@ -14,7 +15,11 @@ public class DBConnection {
 		this.password = password;
 	}
 	public static DBConnection getInstance(String database,String username, String password) {
-		return new DBConnection(database,username,password);
+		if(singleInstance == null)
+		{
+			singleInstance = new DBConnection(database,username,password);
+		}
+		return singleInstance;
 	}
 	
 	void connection()
